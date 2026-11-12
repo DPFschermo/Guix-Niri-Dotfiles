@@ -1,0 +1,94 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "spacing": 4,
+  "width": 1100,
+  "margin-top": 8,
+
+  "modules-left": [
+    "niri/workspaces"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "wireplumber",
+    "custom/breaker",
+    "network",
+    "custom/breaker",
+    "cpu",
+    "custom/breaker",
+    "memory",
+    "custom/breaker",
+    "battery",
+    "custom/breaker",
+    "custom/powermenu"
+  ],
+
+  "niri/workspaces": {
+    "format": "{index}",
+    "all-outputs": true
+  },
+
+  "niri/window": {
+    "format": "{}",
+    "max-length": 50,
+    "separate-outputs": true
+  },
+
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 Muted",
+    "format-icons": ["", "", " "],
+    "on-click": "pavucontrol",
+    "scroll-step": 5
+  },
+
+  "battery": {
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+},
+
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 Wired",
+    "format-disconnected": "󰤭 Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 30,
+    "on-click": "alacritty -e nmtui"
+  },
+
+  "custom/powermenu": {
+    "format": " ",
+    "on-click": "/home/fraggi/.config/rofi/powermenu.sh"
+},
+
+  "custom/breaker": {
+    "format": "|"
+  },
+  
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "on-click": "alacritty -e btop"
+  },
+
+  "memory": {
+    "format": "  {}%",
+    "on-click": "alacritty -e btop"
+  }
+}

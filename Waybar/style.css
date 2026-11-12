@@ -1,0 +1,59 @@
+* {
+     border: none;
+     font-family: "JetBrains Mono", monospace;
+     font-size: 14px;
+     min-height: 0;
+}
+
+window#waybar {
+     background-color: rgba(0, 0, 0, 0.85);
+     color: #ffffff;
+     border-radius: 15px;
+     border: 1px solid rgba(255, 197, 0, 0.4);
+}
+
+window#waybar.hidden {
+     opacity: 0.2;
+}
+
+#workspaces button {
+     padding: 0 5px;
+     color: #888888;
+     margin: 2px 0;
+     border-radius: 15px;
+     margin-left: 4px;
+}
+
+#workspaces button.active {
+     color: #ffffff;
+     border-bottom: 2px solid #FFC500;
+     border-radius: 15px;
+}
+
+#battery {
+    color: #FFC500;
+    padding: 0 4px;
+}
+
+#battery.charging, #battery.plugged {
+    color: #FFC500;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff5555;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#clock, #cpu, #memory, #wireplumber, #custom-breaker, #tray {
+     padding: 0 4px;
+     color: #ffffff;
+     margin: 2px 0;
+}
+
+#custom-powermenu {
+     margin-right: 12px; 
+}
